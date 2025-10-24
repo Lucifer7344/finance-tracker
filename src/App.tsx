@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { supabase } from './lib/supabase';
 import type { User } from '@supabase/supabase-js';
 import { Auth } from './components/Auth';
-import { TaskBoard } from './components/TaskBoard';
+import { Dashboard } from './components/Dashboard';
 
 function App() {
   const [user, setUser] = useState<User | null>(null);
@@ -33,7 +33,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100">
-      {!user ? <Auth /> : <TaskBoard user={user} />}
+      {!user ? <Auth /> : <Dashboard user={user} />}
     </div>
   );
 }
